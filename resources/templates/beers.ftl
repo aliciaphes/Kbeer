@@ -21,15 +21,23 @@
         <#if beers?has_content>
             <div class="container with-margin-top with-margin-bottom">
                 <div class="row header">
-                    <div class="col-3 cell"><b>Name</b></div>
+                    <div class="col-2 cell"><b>Name</b></div>
                     <div class="col-7 cell"><b>Description</b></div>
-                    <div class="col-2 cell"><b>ABV</b></div>
+                    <div class="col-1 cell"><b>ABV</b></div>
+                    <div class="col-2 cell">&nbsp;</div>
                 </div>
                 <#list beers as beer>
                   <div class="row with-border-bottom">
-                    <div class="col-3 cell">${beer.name}</div>
+                    <div class="col-2 cell">${beer.name}</div>
                     <div class="col-7 cell">${beer.description}</div>
-                    <div class="col-2 cell">${beer.abv?string(",##0.0")}</div>
+                    <div class="col-1 cell">${beer.abv?string(",##0.0")}</div>
+                    <div class="col-2 cell">
+                        <form action="/beer" method="post">
+                            <button type="submit" class="btn btn-danger">Delete</button>
+                            <input type="hidden" name="action" value="delete">
+                            <input class="btn btn-danger" type="hidden" name="id" value="${beer.id}" />
+                        </form>
+                    </div>
                   </div>
                 </#list>
             </div>

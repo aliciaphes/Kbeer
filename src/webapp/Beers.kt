@@ -37,6 +37,10 @@ fun Route.beer(beerRepository: BeerRepository) {
                 val beerToAdd = Beer(name, description, abv.toFloat())
                 beerRepository.add(beerToAdd)
             }
+            "delete" -> {
+                val id = parameters["id"] ?: throw IllegalArgumentException("Missing parameter: id")
+                beerRepository.remove(id.toInt())
+            }
         }
         call.respondRedirect(HOME)
     }
