@@ -1,0 +1,37 @@
+body{
+    //font-family: Roboto;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+}
+
+.with-margin{
+    margin: 30px;
+}
+
+.with-border-bottom{
+    border-bottom: 1px solid #dee2e6;
+}
+
+.with-margin-top{
+    margin-top: 30px;
+}
+
+.with-margin-bottom{
+    margin-bottom: 30px;
+}
+
+form{
+    display: flex;
+}
+
+.header{
+    color: #fff;
+    background-color: #343a40;
+    border-color: #454d55;
+    padding: 12px;
+}
+
+.cell{
+    padding: 12px;
+}
