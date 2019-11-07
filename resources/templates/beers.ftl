@@ -16,6 +16,12 @@
                     <div class="col cell"><input type="hidden" name="action" value="add"></div>
                     <div class="col cell"><button type="submit" class="btn btn-warning">Add</button></div>
                 </form>
+                <div class="col cell">
+                    <form action="/beer" method="post">
+                        <input type="hidden" name="action" value="random">
+                        <button type="submit" class="btn btn-warning">Add random</button>
+                    </form>
+                </div>
             </div>
         </div>
         <#if beers?has_content>

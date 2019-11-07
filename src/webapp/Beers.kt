@@ -1,5 +1,6 @@
 package com.kbeer.webapp
 
+import com.kbeer.api.BeerApiClient
 import com.kbeer.model.Beer
 import com.kbeer.repository.BeerRepository
 import io.ktor.application.call
@@ -40,6 +41,11 @@ fun Route.beer(beerRepository: BeerRepository) {
             "delete" -> {
                 val id = parameters["id"] ?: throw IllegalArgumentException("Missing parameter: id")
                 beerRepository.remove(id.toInt())
+            }
+            "random" -> {
+                val beerApiClient = BeerApiClient()
+                val beer = beerApiClient.getBeerFromPunkAPI()
+                beerRepository.add(beer)
             }
         }
         call.respondRedirect(HOME)
