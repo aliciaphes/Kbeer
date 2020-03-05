@@ -6,6 +6,7 @@
         <link rel="stylesheet" type="text/css" href="bootstrap.min.css">
         <link rel="stylesheet" type="text/css" href="main.css">
     </head>
+    <!-- We are not using <table> (and table styling from Bootstrap) because table elements cannot contain forms -->
     <body>
         <div class="container with-margin-top">
             <div class="row with-margin-top">
@@ -33,7 +34,7 @@
                     <div class="col-2 cell">&nbsp;</div>
                 </div>
                 <#list beers as beer>
-                  <div class="row with-border-bottom">
+                  <div class="row bordered-row">
                     <div class="col-2 cell">${beer.name}</div>
                     <div class="col-7 cell">${beer.description}</div>
                     <div class="col-1 cell">${beer.abv?string(",##0.0")}</div>
